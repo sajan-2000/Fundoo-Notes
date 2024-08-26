@@ -12,8 +12,8 @@ class NoteController {
         try {
 
             const data = await this.NoteService.addNote(req.body);
-            res.status(HttpStatus.CREATED).json({
-                code: HttpStatus.CREATED,
+            res.status(HttpStatus.OK).json({
+                code: HttpStatus.OK,
                 data: data,
                 message: 'Note created successfully'
             });
@@ -27,8 +27,8 @@ class NoteController {
 
         try {
             const data = await this.NoteService.getNote(req.params.id);
-            res.status(HttpStatus.CREATED).json({
-                code: HttpStatus.CREATED,
+            res.status(HttpStatus.OK).json({
+                code: HttpStatus.OK,
                 data: data,
                 message: 'Note fetched successfully'
             });
@@ -41,8 +41,8 @@ class NoteController {
 
         try {
             const data = await this.NoteService.getAllNotes(req.body.createdBy);
-            res.status(HttpStatus.CREATED).json({
-                code: HttpStatus.CREATED,
+            res.status(HttpStatus.OK).json({
+                code: HttpStatus.OK,
                 data: data,
                 message: 'Note fetched successfully'
             });
@@ -55,8 +55,8 @@ class NoteController {
 
         try {
             const data = await this.NoteService.deleteNoteById(req.params.id);
-            res.status(HttpStatus.CREATED).json({
-                code: HttpStatus.CREATED,
+            res.status(HttpStatus.OK).json({
+                code: HttpStatus.OK,
                 data: data,
                 message: 'Note deleted successfully'
             });
@@ -69,8 +69,8 @@ class NoteController {
 
         try {
             const data = await this.NoteService.updatNote(req.params.id, req.body);
-            res.status(HttpStatus.CREATED).json({
-                code: HttpStatus.CREATED,
+            res.status(HttpStatus.OK).json({
+                code: HttpStatus.OK,
                 data: data,
                 message: 'Note updated successfully'
             });
@@ -83,8 +83,8 @@ class NoteController {
 
         try {
             const data = await this.NoteService.isArchive(req.params.id);
-            res.status(HttpStatus.CREATED).json({
-                code: HttpStatus.CREATED,
+            res.status(HttpStatus.OK).json({
+                code: HttpStatus.OK,
                 data: data,
                 message: 'Note archive status toggled successfully'
             });
@@ -101,8 +101,8 @@ class NoteController {
 
         try {
             const data = await this.NoteService.isTrash(req.params.id);
-            res.status(HttpStatus.CREATED).json({
-                code: HttpStatus.CREATED,
+            res.status(HttpStatus.OK).json({
+                code: HttpStatus.OK,
                 data: data,
                 message: 'Note trash status toggled successfully'
             });

@@ -2,9 +2,7 @@ import winston, { format } from 'winston';
 import 'winston-daily-rotate-file';
 
 class Logger {
-  /**
-   * Logger handles all logs in the application
-   */
+  
   static logger = winston.createLogger({
     format: format.combine(format.timestamp(), format.simple()),
     transports: [

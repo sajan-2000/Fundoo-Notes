@@ -1,0 +1,193 @@
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T02:55:39.556Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T02:55:39.734Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T02:59:36.735Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T02:59:36.873Z"}
+error: 
+    status - 500 
+    message - ValidationError: "email" must be a valid email 
+    url - /api/v1/users/login 
+    method - POST 
+    IP - ::1
+   {"timestamp":"2024-08-22T03:00:13.720Z"}
+error: 
+    status - 500 
+    message - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-20385bdca50sm2792325ad.245 - gsmtp
+    at SMTPConnection._formatError (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:798:19)
+    at SMTPConnection._actionAUTHComplete (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:1577:34)
+    at SMTPConnection.<anonymous> (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:554:26)
+    at SMTPConnection._processResponse (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:982:20)
+    at SMTPConnection._onData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:763:14)
+    at TLSSocket.SMTPConnection._onSocketData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:390:5) 
+    url - /api/v1/users/forgotpassword 
+    method - POST 
+    IP - ::1
+   {"timestamp":"2024-08-22T03:01:19.379Z"}
+error: 
+    status - 500 
+    message - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-20385567d73sm2886765ad.32 - gsmtp
+    at SMTPConnection._formatError (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:798:19)
+    at SMTPConnection._actionAUTHComplete (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:1577:34)
+    at SMTPConnection.<anonymous> (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:554:26)
+    at SMTPConnection._processResponse (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:982:20)
+    at SMTPConnection._onData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:763:14)
+    at TLSSocket.SMTPConnection._onSocketData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:390:5) 
+    url - /api/v1/users/forgotpassword 
+    method - POST 
+    IP - ::1
+   {"timestamp":"2024-08-22T03:01:53.187Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:02:56.052Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:02:56.333Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:03:00.183Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:03:00.326Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:03:14.077Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:03:14.232Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:03:16.144Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:03:16.294Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:03:27.910Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:03:28.079Z"}
+error: 
+    status - 500 
+    message - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-20385fcfb5csm2818455ad.307 - gsmtp
+    at SMTPConnection._formatError (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:798:19)
+    at SMTPConnection._actionAUTHComplete (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:1577:34)
+    at SMTPConnection.<anonymous> (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:554:26)
+    at SMTPConnection._processResponse (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:982:20)
+    at SMTPConnection._onData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:763:14)
+    at TLSSocket.SMTPConnection._onSocketData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:390:5) 
+    url - /api/v1/users/forgotpassword 
+    method - POST 
+    IP - ::1
+   {"timestamp":"2024-08-22T03:03:38.879Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:19:18.731Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:19:18.897Z"}
+error: 
+    status - 500 
+    message - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-7cd9ac9827bsm281491a12.1 - gsmtp
+    at SMTPConnection._formatError (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:798:19)
+    at SMTPConnection._actionAUTHComplete (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:1577:34)
+    at SMTPConnection.<anonymous> (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:554:26)
+    at SMTPConnection._processResponse (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:982:20)
+    at SMTPConnection._onData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:763:14)
+    at TLSSocket.SMTPConnection._onSocketData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:390:5) 
+    url - /api/v1/users/forgotpassword 
+    method - POST 
+    IP - ::1
+   {"timestamp":"2024-08-22T03:20:37.673Z"}
+error: 
+    status - 500 
+    message - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-714378611d9sm205786b3a.43 - gsmtp
+    at SMTPConnection._formatError (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:798:19)
+    at SMTPConnection._actionAUTHComplete (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:1577:34)
+    at SMTPConnection.<anonymous> (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:554:26)
+    at SMTPConnection._processResponse (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:982:20)
+    at SMTPConnection._onData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:763:14)
+    at TLSSocket.SMTPConnection._onSocketData (D:\firstProject\Firstproject\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:390:5) 
+    url - /api/v1/users/forgotpassword 
+    method - POST 
+    IP - ::1
+   {"timestamp":"2024-08-22T03:23:10.810Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:24:10.554Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:24:10.703Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:24:13.527Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:24:13.679Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T03:24:16.292Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T03:24:16.448Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:31:17.161Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:43:54.154Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:45:46.052Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:45:50.107Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:51:04.753Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:51:16.465Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:51:20.444Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T05:51:28.577Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T05:51:30.681Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:51:30.847Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T05:51:48.313Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T05:51:48.605Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:05:27.767Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:05:27.946Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:08:35.688Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:08:35.859Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:08:50.571Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:08:50.757Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:09:54.156Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:09:54.609Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:10:14.115Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:10:14.325Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:10:16.307Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:10:16.539Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:11:05.456Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:11:06.913Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:11:07.096Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:11:20.926Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:11:21.157Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:16:16.514Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:16:20.668Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:16:20.931Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:16:25.859Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:16:26.126Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:16:37.633Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:16:37.810Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:48:17.558Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:48:18.026Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:51:52.369Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:51:52.573Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:52:20.673Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:52:24.840Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:52:25.034Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:54:49.619Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:54:49.837Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T06:55:08.539Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T06:55:08.696Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:02:38.071Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:02:38.237Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:02:46.418Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:02:46.596Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:02:56.298Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:02:56.557Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:03:04.200Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:03:08.311Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:03:12.999Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:03:16.830Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:03:16.963Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:03:49.643Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:03:49.785Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:03:52.320Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:03:56.123Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:03:56.263Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:22:22.169Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:22:22.327Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:22:23.802Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:22:24.043Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:22:31.098Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:22:31.358Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T07:22:45.482Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T07:22:45.654Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T08:26:46.150Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-22T08:33:40.708Z"}
+info: Connected to the database. {"timestamp":"2024-08-22T08:33:40.918Z"}

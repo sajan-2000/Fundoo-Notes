@@ -1,0 +1,65 @@
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T06:44:47.858Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T06:44:48.236Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T06:47:10.882Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T06:47:11.432Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T06:58:29.371Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T06:58:29.641Z"}
+error: 
+    status - 500 
+    message - Error
+    at Query.run (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\postgres\query.js:76:25)
+    at D:\firstProject\Firstproject\node_modules\sequelize\src\sequelize.js:650:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\abstract\query-interface.js:795:21)
+    at async User.save (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:4154:35)
+    at async Function.create (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:2305:12) 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-24T06:58:29.781Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T06:59:20.542Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T06:59:20.729Z"}
+error: 
+    status - 500 
+    message - Error
+    at Query.run (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\postgres\query.js:76:25)
+    at D:\firstProject\Firstproject\node_modules\sequelize\src\sequelize.js:650:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\abstract\query-interface.js:795:21)
+    at async User.save (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:4154:35)
+    at async Function.create (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:2305:12) 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-24T06:59:20.775Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:00:03.976Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:00:04.166Z"}
+error: 
+    status - 500 
+    message - Error
+    at Query.run (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\postgres\query.js:76:25)
+    at D:\firstProject\Firstproject\node_modules\sequelize\src\sequelize.js:650:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\abstract\query-interface.js:795:21)
+    at async User.save (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:4154:35)
+    at async Function.create (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:2305:12) 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-24T07:00:04.208Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:00:29.278Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:00:29.472Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:02:12.174Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:02:12.404Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:07:02.719Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:07:02.879Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:08:00.984Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:08:01.256Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:15:18.029Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:15:18.280Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:15:41.529Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:15:41.665Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:16:43.116Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:16:43.280Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-24T07:50:57.806Z"}
+info: Connected to the database. {"timestamp":"2024-08-24T07:50:58.333Z"}

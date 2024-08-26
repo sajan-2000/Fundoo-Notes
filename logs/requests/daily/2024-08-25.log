@@ -1,0 +1,4 @@
+info: ::ffff:127.0.0.1 - - [25/Aug/2024:06:08:30 +0000] "POST /api/v1/users HTTP/1.1" 500 51 "-" "node-superagent/3.8.3"
+
+info: ::ffff:127.0.0.1 - - [25/Aug/2024:06:10:55 +0000] "POST /api/v1/users HTTP/1.1" 500 51 "-" "node-superagent/3.8.3"
+

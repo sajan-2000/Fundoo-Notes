@@ -1,0 +1,944 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Fundoo Notes",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api/v1/"
+        }
+    ],
+    "tags": [
+        {
+            "name": "User",
+            "description": "Operations about user"
+        },
+        {
+            "name": "Notes",
+            "description": "Operations about notes"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "summary": "User Registration",
+                "operationId": "register user",
+                "description": "User is Created",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "description": "Enter user details but names, mobile number, email and password are mandatory.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string",
+                                        "description": "The user's first name"
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "description": "The user's last name"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "description": "The user's email"
+                                    },
+                                    "phoneno": {
+                                        "type": "string",
+                                        "description": "The user's mobile number"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "description": "The user's password"
+                                    }
+                                },
+                                "required": [
+                                    "firstName",
+                                    "lastName",
+                                    "email",
+                                    "phoneno",
+                                    "password"
+                                ]
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "User Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 201
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "firstName": {
+                                                    "type": "string"
+                                                },
+                                                "lastName": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "password": {
+                                                    "type": "string",
+                                                    "description": "Hash of user password"
+                                                },
+                                                "phoneno": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "User created successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/login": {
+            "post": {
+                "summary": "User login",
+                "operationId": "Analysis Sign",
+                "description": "User is authenticated",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "description": "email and password of the user",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "description": "The user's email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "description": "The user's password"
+                                    }
+                                },
+                                "required": [
+                                    "email",
+                                    "password"
+                                ]
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login result",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "string",
+                                            "example": "xyz@gmail.com Login successful"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "User fetched successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/forgotpassword": {
+            "post": {
+                "summary": "Forgot Password",
+                "operationId": "forgotPassword",
+                "description": "Sends a password reset link to the user's email",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "description": "User's email to send the reset link",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "description": "The user's email"
+                                    }
+                                },
+                                "required": [
+                                    "email"
+                                ]
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Reset link sent",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Reset link sent successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/resetpwd": {
+            "post": {
+                "summary": "Reset Password",
+                "operationId": "resetPassword",
+                "description": "Resets the user's password",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "description": "User's email and new password",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "description": "The user's email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "description": "The user's new password"
+                                    }
+                                },
+                                "required": [
+                                    "email",
+                                    "password"
+                                ]
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Password reset",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Password reset successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/notes": {
+            "post": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Creates new Notes",
+                "operationId": "Creation",
+                "description": "Creation of user using token",
+                "tags": [
+                    "Notes"
+                ],
+                "requestBody": {
+                    "description": "ELF binary to analyse",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "description": "title of note"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "description of note"
+                                    },
+                                    "color": {
+                                        "type": "string",
+                                        "description": "color of note"
+                                    },
+                                    "isArchive": {
+                                        "type": "boolean",
+                                        "example": false
+                                    },
+                                    "isTrash": {
+                                        "type": "boolean",
+                                        "example": false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Note creation result",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "archive": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "trash": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": "cheen tapak dum dum"
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": "jay ho"
+                                                },
+                                                "color": {
+                                                    "type": "string",
+                                                    "example": "white"
+                                                },
+                                                "createdBy": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                }
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Note Created Successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/": {
+            "get": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Get All Notes",
+                "operationId": "getAllNotes",
+                "description": "Retrieves all notes for the authenticated user",
+                "tags": [
+                    "Notes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of notes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "Sample Note Title"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "Sample Note Description"
+                                                    },
+                                                    "color": {
+                                                        "type": "string",
+                                                        "example": "yellow"
+                                                    },
+                                                    "isArchive": {
+                                                        "type": "boolean",
+                                                        "example": false
+                                                    },
+                                                    "isTrash": {
+                                                        "type": "boolean",
+                                                        "example": false
+                                                    },
+                                                    "createdBy": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "createdAt": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T10:54:03.077Z"
+                                                    },
+                                                    "updatedAt": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T10:54:03.077Z"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Notes fetched successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Get Note By ID",
+                "operationId": "getNoteById",
+                "description": "Retrieves a specific note by ID for the authenticated user",
+                "tags": [
+                    "Notes"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "The ID of the note to retrieve"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": "Sample Note Title"
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": "Sample Note Description"
+                                                },
+                                                "color": {
+                                                    "type": "string",
+                                                    "example": "yellow"
+                                                },
+                                                "isArchive": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "isTrash": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "createdBy": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                }
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Note fetched successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/delete/{id}": {
+            "post": {
+                "summary": "Deleting user specific note",
+                "operationId": "deletion",
+                "description": "deletion of user note using token",
+                "tags": [
+                    "Notes"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note deleted successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "string",
+                                            "example": "Note deleted"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Note Deleted successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/archive/{id}": {
+            "put": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Toggle Archive Status",
+                "operationId": "toggleArchive",
+                "description": "Toggles the archive status of a specific note by ID for the authenticated user",
+                "tags": [
+                    "Notes"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "The ID of the note to toggle archive status"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note archive status toggled",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": "Sample Note Title"
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": "Sample Note Description"
+                                                },
+                                                "color": {
+                                                    "type": "string",
+                                                    "example": "yellow"
+                                                },
+                                                "isArchive": {
+                                                    "type": "boolean",
+                                                    "example": true
+                                                },
+                                                "isTrash": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "createdBy": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                }
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Note archive status toggled successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/trash/{id}": {
+            "put": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Toggle Trash Status",
+                "operationId": "toggleTrash",
+                "description": "Toggles the trash status of a specific note by ID for the authenticated user",
+                "tags": [
+                    "Notes"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "The ID of the note to toggle trash status"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note trash status toggled",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": "Sample Note Title"
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": "Sample Note Description"
+                                                },
+                                                "color": {
+                                                    "type": "string",
+                                                    "example": "yellow"
+                                                },
+                                                "isArchive": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "isTrash": {
+                                                    "type": "boolean",
+                                                    "example": true
+                                                },
+                                                "createdBy": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                }
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Note trash status toggled successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/update/{id}": {
+            "put": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Update Note By ID",
+                "operationId": "updateNoteById",
+                "description": "Updates a specific note by ID for the authenticated user",
+                "tags": [
+                    "Notes"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "The ID of the note to update"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Updated details of the note",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "description": "Title of the note"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Description of the note"
+                                    },
+                                    "color": {
+                                        "type": "string",
+                                        "description": "Color of the note"
+                                    },
+                                    "isArchive": {
+                                        "type": "boolean",
+                                        "description": "Whether the note is archived"
+                                    },
+                                    "isTrash": {
+                                        "type": "boolean",
+                                        "description": "Whether the note is in the trash"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Note updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": "Updated Note Title"
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": "Updated Note Description"
+                                                },
+                                                "color": {
+                                                    "type": "string",
+                                                    "example": "blue"
+                                                },
+                                                "isArchive": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "isTrash": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "createdBy": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-08-06T10:54:03.077Z"
+                                                }
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Note updated successfully"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

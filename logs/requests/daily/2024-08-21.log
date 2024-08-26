@@ -1,0 +1,14 @@
+info: ::1 - - [21/Aug/2024:03:11:39 +0000] "POST /api/v1/users/forgotpassword HTTP/1.1" 201 221 "-" "PostmanRuntime/7.41.1"
+
+info: ::1 - - [21/Aug/2024:03:13:21 +0000] "POST /api/v1/users/resetpwd HTTP/1.1" 201 48 "-" "PostmanRuntime/7.41.1"
+
+info: ::1 - - [21/Aug/2024:03:22:11 +0000] "POST /api/v1/users/resetpwd HTTP/1.1" 201 43 "-" "PostmanRuntime/7.41.1"
+
+info: ::1 - - [21/Aug/2024:03:30:40 +0000] "POST /api/v1/users/resetpwd HTTP/1.1" 201 54 "-" "PostmanRuntime/7.41.1"
+
+info: ::1 - - [21/Aug/2024:03:32:12 +0000] "POST /api/v1/users/resetpwd HTTP/1.1" 201 54 "-" "PostmanRuntime/7.41.1"
+
+info: ::1 - - [21/Aug/2024:03:32:52 +0000] "POST /api/v1/users/resetpwd HTTP/1.1" 201 54 "-" "PostmanRuntime/7.41.1"
+
+info: ::1 - - [21/Aug/2024:03:44:01 +0000] "POST /api/v1/users/resetpwd HTTP/1.1" 201 249 "-" "PostmanRuntime/7.41.1"
+

@@ -34,8 +34,8 @@ class UserController {
         })
       }
 
-      res.status(HttpStatus.CREATED).json({
-        code: HttpStatus.CREATED,
+      res.status(HttpStatus.OK).json({
+        code: HttpStatus.OK,
         data: data,
         message: 'Logged in successfully'
       });
@@ -49,8 +49,8 @@ class UserController {
 
     try {
       const data = await this.UserService.forgotPass(req.body);
-      res.status(HttpStatus.CREATED).json({
-        code: HttpStatus.CREATED,
+      res.status(HttpStatus.ACCEPTED).json({
+        code: HttpStatus.ACCEPTED,
         data: data,
         message: 'Token sent successfully'
       });
@@ -63,8 +63,8 @@ class UserController {
 
     try {
       const data = await this.UserService.resetpass(req.body);
-      res.status(HttpStatus.CREATED).json({
-        code: HttpStatus.CREATED,
+      res.status(HttpStatus.ACCEPTED).json({
+        code: HttpStatus.ACCEPTED,
         message: 'reset successfully'
       });
     } catch (error) {

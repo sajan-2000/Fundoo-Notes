@@ -17,7 +17,7 @@ class NoteRoutes {
         this.router.post('', userAuth, this.NoteController.createNote);
 
         //read all notes
-        this.router.get('', userAuth, this.NoteController.getAllNotes);
+        this.router.get('/', userAuth, this.NoteController.getAllNotes);
 
         //read notes by id
         this.router.get('/:id', userAuth, this.NoteController.getNote);

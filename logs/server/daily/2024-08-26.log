@@ -1,0 +1,85 @@
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T03:39:36.797Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T03:39:37.027Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T03:40:04.632Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T03:40:05.250Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:06:47.037Z"}
+error: 
+    status - 500 
+    message - ValidationError: "password" length must be at least 8 characters long 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-26T04:06:47.146Z"}
+error: 
+    status - 500 
+    message - ValidationError: "password" length must be at least 8 characters long 
+    url - /api/v1/users/login 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-26T04:06:47.204Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:08:01.986Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:08:02.275Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:10:26.698Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:10:26.917Z"}
+error: 
+    status - 500 
+    message - Error
+    at Query.run (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\postgres\query.js:76:25)
+    at D:\firstProject\Firstproject\node_modules\sequelize\src\sequelize.js:650:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\abstract\query-interface.js:795:21)
+    at async User.save (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:4154:35)
+    at async Function.create (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:2305:12) 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-26T04:10:27.008Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:16:08.609Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:16:08.753Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:22:27.395Z"}
+error: 
+      status - 400
+      message - Authorization token is required 
+      url - /api/v1/notes 
+      method - POST 
+      IP - ::ffff:127.0.0.1
+     {"timestamp":"2024-08-26T04:22:27.430Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:23:32.747Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:23:33.016Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:30:27.663Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:30:27.832Z"}
+error: 
+    status - 500 
+    message - Error
+    at Query.run (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\postgres\query.js:76:25)
+    at D:\firstProject\Firstproject\node_modules\sequelize\src\sequelize.js:650:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\abstract\query-interface.js:795:21)
+    at async User.save (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:4154:35)
+    at async Function.create (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:2305:12) 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-26T04:30:27.907Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:31:31.354Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:31:31.595Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:41:35.300Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:41:35.644Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:42:56.958Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:42:57.102Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:49:54.374Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:49:54.557Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:51:01.564Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:51:01.740Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:54:10.654Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:54:10.819Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:55:20.058Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:55:20.348Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:56:38.923Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:56:39.160Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:57:43.026Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:57:43.208Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:58:42.653Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:58:42.830Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-26T04:59:29.822Z"}
+info: Connected to the database. {"timestamp":"2024-08-26T04:59:29.960Z"}

@@ -1,0 +1,33 @@
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-25T05:57:16.636Z"}
+info: Connected to the database. {"timestamp":"2024-08-25T05:57:16.813Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-25T06:06:02.039Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-25T06:08:29.312Z"}
+info: Connected to the database. {"timestamp":"2024-08-25T06:08:30.061Z"}
+error: 
+    status - 500 
+    message - Error
+    at Query.run (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\postgres\query.js:76:25)
+    at D:\firstProject\Firstproject\node_modules\sequelize\src\sequelize.js:650:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\abstract\query-interface.js:795:21)
+    at async User.save (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:4154:35)
+    at async Function.create (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:2305:12) 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-25T06:08:30.169Z"}
+info: Server started at http://localhost:3000/api/v1/ {"timestamp":"2024-08-25T06:10:55.233Z"}
+info: Connected to the database. {"timestamp":"2024-08-25T06:10:55.402Z"}
+error: 
+    status - 500 
+    message - Error
+    at Query.run (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\postgres\query.js:76:25)
+    at D:\firstProject\Firstproject\node_modules\sequelize\src\sequelize.js:650:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (D:\firstProject\Firstproject\node_modules\sequelize\src\dialects\abstract\query-interface.js:795:21)
+    at async User.save (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:4154:35)
+    at async Function.create (D:\firstProject\Firstproject\node_modules\sequelize\src\model.js:2305:12) 
+    url - /api/v1/users 
+    method - POST 
+    IP - ::ffff:127.0.0.1
+   {"timestamp":"2024-08-25T06:10:55.430Z"}

@@ -1,0 +1,10 @@
+info: ::1 - - [20/Aug/2024:05:15:27 +0000] "POST /api/v1/users/login HTTP/1.1" 201 265 "-" "PostmanRuntime/7.41.0"
+
+info: ::1 - - [20/Aug/2024:05:16:35 +0000] "PUT /api/v1/notes/archive/8 HTTP/1.1" 201 262 "-" "PostmanRuntime/7.41.0"
+
+info: ::1 - - [20/Aug/2024:05:18:03 +0000] "PUT /api/v1/notes/trash/8 HTTP/1.1" 201 261 "-" "PostmanRuntime/7.41.0"
+
+info: ::1 - - [20/Aug/2024:05:18:14 +0000] "PUT /api/v1/notes/trash/8 HTTP/1.1" 201 260 "-" "PostmanRuntime/7.41.0"
+
+info: ::1 - - [20/Aug/2024:14:10:12 +0000] "POST /api/v1/users/forgotpassword HTTP/1.1" 201 221 "-" "PostmanRuntime/7.41.0"
+

@@ -1,0 +1,39 @@
+// {
+//   "compilerOptions": {
+//     "target": "es6",
+//     "module": "commonjs",
+//     "allowJs": true,
+//     "outDir": "./build",
+//     "rootDir": "./src",
+//     "esModuleInterop": true,
+//     "noImplicitAny": false,
+//     "allowSyntheticDefaultImports": true
+//   },
+//   "include": [
+//     "src/**/*"
+//   ],
+//   "exclude": [
+//     "node_modules",
+//     "src/tests"
+//   ]
+// }
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "allowJs": true,
+    "outDir": "./build",
+    "rootDir": "./",
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+    // "index.ts",
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

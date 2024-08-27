@@ -16,6 +16,7 @@ let noteObj = {
     description: "This is Description",
     colour: "white"
 };
+let createdNoteId;
 
 describe('Note APIs Test', () => {
     before((done) => {
@@ -52,6 +53,7 @@ describe('Note APIs Test', () => {
                 .end((err, res) => {
                     console.log(token, res.body);
                     expect(res.statusCode).to.be.equal(200);
+                    createdNoteId = res.body.data.id;
                     done();
                 });
         });
@@ -60,7 +62,7 @@ describe('Note APIs Test', () => {
     describe('/:id PUT', () => {
         it('Update a Note', (done) => {
             request(app.getApp())
-                .put('/api/v1/notes/update/14') // id of note
+                .put(`/api/v1/notes/update/${createdNoteId}`) // id of note
                 .set('Authorization', token)
                 .send({ "description": "food" })
                 .end((err, res) => {
@@ -87,7 +89,7 @@ describe('Note APIs Test', () => {
     describe('/:id GET', () => {
         it('Should Fetch a Single Note', (done) => {
             request(app.getApp())
-                .get('/api/v1/notes/14')
+                .get(`/api/v1/notes/${createdNoteId}`)
                 .set('Authorization', token)
                 .end((err, res) => {
                     console.log(res.body);
@@ -100,7 +102,7 @@ describe('Note APIs Test', () => {
     describe('/archive/:id POST', () => {
         it('Should Archive a Single Note', (done) => {
             request(app.getApp())
-                .put('/api/v1/notes/archive/8')
+                .put(`/api/v1/notes/archive/${createdNoteId}`)
                 .set('Authorization', token)
                 .end((err, res) => {
                     console.log(res.body);
@@ -113,7 +115,7 @@ describe('Note APIs Test', () => {
     describe('/trash/:id POST', () => {
         it('Should Trash a Single Note', (done) => {
             request(app.getApp())
-                .put('/api/v1/notes/trash/14')
+                .put(`/api/v1/notes/trash/${createdNoteId}`)
                 .set('Authorization', token)
                 .end((err, res) => {
                     console.log(res.body);
@@ -126,7 +128,7 @@ describe('Note APIs Test', () => {
     describe('/delete/:id POST', () => {
         it('Should Delete a Single Note', (done) => {
             request(app.getApp())
-                .delete('/api/v1/notes/delete/14')
+                .delete(`/api/v1/notes/delete/${createdNoteId}`)
                 .set('Authorization', token)
                 .end((err, res) => {
                     console.log(res.body);
@@ -135,5 +137,6 @@ describe('Note APIs Test', () => {
                 });
         });
     });
+
 
 });

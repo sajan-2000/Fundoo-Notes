@@ -3,17 +3,24 @@ import bcrypt from 'bcrypt';
 import HttpStatus from 'http-status-codes';
 const jwt = require('jsonwebtoken');
 import { INote } from '../interfaces/notes.interface';
+import noteutil from '../utils/notes.util';
 
 import note from '../models/notes';
 
+let redisData;
 class NoteService {
     private Note = note(sequelize, DataTypes);
+    public noteUtil = new noteutil();
     //create Note
     public addNote = async (noteData) => {
-        console.log(noteData.createdBy);
         try {
             const data = await this.Note.create(noteData);
-            return data;
+            if (data) {
+                redisData = await this.noteUtil.update(noteData.createdBy, data);
+                return data;
+            } else {
+                return data;
+            }
         } catch (error) {
             console.error("Error creating note:", error);
             throw error;
@@ -23,12 +30,23 @@ class NoteService {
 
     //read All the notes
     public getAllNotes = async (createdBy) => {
-        const data = await this.Note.findAll({
-            where: {
-                createdBy: createdBy
+        try {
+            const data = await this.Note.findAll({
+                where: {
+                    createdBy: createdBy
+                }
+            });
+
+            if (data) {
+                redisData = await this.noteUtil.set(createdBy, data);
+                return data;
+            } else {
+                return data;
             }
-        });
-        return data;
+        } catch (error) {
+            return error;
+        }
+
     }
 
     //read by id

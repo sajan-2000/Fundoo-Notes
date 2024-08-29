@@ -14,20 +14,16 @@ class UserService {
   public signUp = async (userDetails) => {
 
     if (userDetails != null) {
-
       const hashedPassword = await bcrypt.hash(userDetails.password, 10);
       userDetails.password = hashedPassword;
       const data = await this.User.create(userDetails);
       return data;
-
     } else {
-
       return {
         code: HttpStatus.UNAUTHORIZED,
         data: [],
         message: 'invalid details entered'
       };
-
     }
   };
 

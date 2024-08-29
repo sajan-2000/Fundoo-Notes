@@ -1,4 +1,4 @@
-import winston, { format } from 'winston';
+import winston, { createLogger, transports, format } from 'winston';
 import 'winston-daily-rotate-file';
 
 class Logger {
@@ -31,11 +31,7 @@ class Logger {
   });
 
   static logStream = {
-    /**
-     * A writable stream for winston logger.
-     *
-     * @param {any} message
-     */
+
     write(message) {
       /**
        * morganLogger logs all http request in a dedicated file and on console

@@ -4,6 +4,7 @@ dotenv.config();
 import express, { Application } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import redisClient from './config/redis'
 
 import routes from './routes';
 import ErrorHandler from './middlewares/error.middleware';
@@ -33,6 +34,7 @@ class App {
     this.initializeMiddleWares();
     this.initializeRoutes();
     this.initializeErrorHandlers();
+    // this.initializeRedis();
     this.startApp();
   }
 
@@ -55,6 +57,16 @@ class App {
     this.app.use(this.errorHandler.genericErrorHandler);
     this.app.use(this.errorHandler.notFound);
   }
+
+  // private async initializeRedis(): Promise<void> {
+  //   try {
+  //     await redisClient();
+  //     this.startApp();
+  //   } catch (error) {
+  //     this.logger.error('Failed to initialize Redis, shutting down the server.');
+  //     process.exit(1);
+  //   }
+  // }
 
   public startApp(): void {
     this.app.listen(this.port, () => {

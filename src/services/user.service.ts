@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import HttpStatus from 'http-status-codes';
 const jwt = require('jsonwebtoken');
 import { sendResetPasswordEmail } from '../utils/sendEmail';
+import { publish } from '../config/rabbitmq'
 import { IUser } from '../interfaces/user.interface';
 
 import user from '../models/user';
@@ -17,7 +18,12 @@ class UserService {
       const hashedPassword = await bcrypt.hash(userDetails.password, 10);
       userDetails.password = hashedPassword;
       const data = await this.User.create(userDetails);
-      return data;
+      const { password, ...userWithoutPassword } = data.toJSON ? data.toJSON() : data;
+
+      const message = JSON.stringify(userWithoutPassword);
+      await publish('User', message);
+
+      return userWithoutPassword;
     } else {
       return {
         code: HttpStatus.UNAUTHORIZED,
@@ -35,9 +41,7 @@ class UserService {
           email: userDetails.email
         }
       })
-
       console.log(user.dataValues.id);
-
       if (!user) {
         return {
           code: HttpStatus.NOT_FOUND,
@@ -45,9 +49,7 @@ class UserService {
           message: "user not found"
         }
       }
-
       let checkPassword = await bcrypt.compare(userDetails.password, user.password);
-
       if (!checkPassword) {
         return {
           code: HttpStatus.UNAUTHORIZED,
@@ -55,14 +57,11 @@ class UserService {
           message: 'Invalid email or password'
         };
       }
-
       const token = jwt.sign({ email: user.email, id: user.dataValues.id }, process.env.ACCESS_TOKEN_KEY);
-
       return {
         data: token,
         user: { email: user.email, name: user.firstName },
       }
-
 
     } catch (error) {
       console.log("Invalid data");

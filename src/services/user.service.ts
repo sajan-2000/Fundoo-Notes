@@ -41,30 +41,29 @@ class UserService {
           email: userDetails.email
         }
       })
-      console.log(user.dataValues.id);
+
       if (!user) {
         return {
           code: HttpStatus.NOT_FOUND,
-          data: [],
-          message: "user not found"
-        }
+          message: "User not found"
+        };
       }
       let checkPassword = await bcrypt.compare(userDetails.password, user.password);
       if (!checkPassword) {
         return {
           code: HttpStatus.UNAUTHORIZED,
-          data: [],
           message: 'Invalid email or password'
         };
       }
       const token = jwt.sign({ email: user.email, id: user.dataValues.id }, process.env.ACCESS_TOKEN_KEY);
       return {
+        code: HttpStatus.OK,
         data: token,
         user: { email: user.email, name: user.firstName },
       }
 
     } catch (error) {
-      console.log("Invalid data");
+      console.log("Invalid data", error);
     }
   }
 

@@ -50,40 +50,99 @@ class NoteService {
     }
 
     //read by id
-    public getNote = async (id) => {
-
-        const data = await this.Note.findByPk(id)
-        return data;
+    public getNote = async (id: number, createdBy: number) => {
+        try {
+            const data = await this.Note.findOne({
+                where: {
+                    id: id,
+                    createdBy: createdBy
+                }
+            });
+            return data;
+        } catch (error) {
+            console.error("Error fetching note:", error);
+            throw error;
+        }
     }
 
     //delete notes 
-    public deleteNoteById = async (id) => {
-        const fetchNote = await this.Note.findByPk(id);
-        await fetchNote.destroy();
+    public deleteNoteById = async (id: number, createdBy: number) => {
+        try {
+            const fetchNote = await this.Note.findOne({
+                where: {
+                    id: id,
+                    createdBy: createdBy
+                }
+            });
 
-        return fetchNote;
+            if (fetchNote) {
+                await fetchNote.destroy();
+                return fetchNote;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            console.error("Error deleting note:", error);
+            throw error;
+        }
     }
 
     //update Notes
-    public updatNote = async (id, updateBody) => {
-        const fetchNote = await this.Note.findByPk(id);
-        await fetchNote.update(updateBody);
+    public updateNote = async (id: number, createdBy: number, updateBody: Partial<INote>) => {
+        try {
+            const fetchNote = await this.Note.findOne({
+                where: {
+                    id: id,
+                    createdBy: createdBy
+                }
+            });
+
+            if (fetchNote) {
+                await fetchNote.update(updateBody);
+                return fetchNote;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            console.error("Error updating note:", error);
+            throw error;
+        }
     }
 
     //archive Note
-    public isArchive = async (id) => {
-        const data = await this.Note.findByPk(id);
-        data.isArchive = !data.isArchive;
-        await data.save();
-        return data;
+    public isArchive = async (id, createdBy) => {
+        try {
+            const data = await this.Note.findOne({
+                where: {
+                    id: id,
+                    createdBy: createdBy
+                }
+            });
+            data.isArchive = !data.isArchive;
+            await data.save();
+            return data;
+        } catch (error) {
+            console.error("Error archiving note:", error);
+            throw error;
+        }
     }
 
     //trash Note
-    public isTrash = async (id) => {
-        const data = await this.Note.findByPk(id);
-        data.isTrash = !data.isTrash;
-        await data.save();
-        return data;
+    public isTrash = async (id, createdBy) => {
+        try {
+            const data = await this.Note.findOne({
+                where: {
+                    id: id,
+                    createdBy: createdBy
+                }
+            });
+            data.isTrash = !data.isTrash;
+            await data.save();
+            return data;
+        } catch (error) {
+            console.error("Error trashing note:", error);
+            throw error;
+        }
     }
 
 }

@@ -27,13 +27,12 @@ class UserController {
     try {
       const data = await this.UserService.userLogin(req.body);
 
-      if (data == null) {
-        return res.status(HttpStatus.UNAUTHORIZED).json({
-          code: HttpStatus.UNAUTHORIZED,
-          message: 'Invalid email or password'
-        })
+      if (data.code !== HttpStatus.OK) {
+        return res.status(data.code).json({
+          code: data.code,
+          message: data.message,
+        });
       }
-
       res.status(HttpStatus.OK).json({
         code: HttpStatus.OK,
         data: data,

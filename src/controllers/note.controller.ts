@@ -8,9 +8,7 @@ class NoteController {
     public NoteService = new noteService();
 
     public createNote = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-
         try {
-
             const data = await this.NoteService.addNote(req.body);
             res.status(HttpStatus.OK).json({
                 code: HttpStatus.OK,
@@ -23,10 +21,8 @@ class NoteController {
     };
 
     public getNote = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-        console.log(req.params.id);
-
         try {
-            const data = await this.NoteService.getNote(req.params.id);
+            const data = await this.NoteService.getNote(Number(req.params.id), req.body.createdBy);
             res.status(HttpStatus.OK).json({
                 code: HttpStatus.OK,
                 data: data,
@@ -38,7 +34,6 @@ class NoteController {
     }
 
     public getAllNotes = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-
         try {
             const data = await this.NoteService.getAllNotes(req.body.createdBy);
             res.status(HttpStatus.OK).json({
@@ -52,9 +47,8 @@ class NoteController {
     }
 
     public deleteNoteById = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-
         try {
-            const data = await this.NoteService.deleteNoteById(req.params.id);
+            const data = await this.NoteService.deleteNoteById(Number(req.params.id), req.body.createdBy);
             res.status(HttpStatus.OK).json({
                 code: HttpStatus.OK,
                 data: data,
@@ -66,9 +60,8 @@ class NoteController {
     }
 
     public updateNote = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-
         try {
-            const data = await this.NoteService.updatNote(req.params.id, req.body);
+            const data = await this.NoteService.updateNote(Number(req.params.id), req.body.createdBy, req.body);
             res.status(HttpStatus.OK).json({
                 code: HttpStatus.OK,
                 data: data,
@@ -80,9 +73,8 @@ class NoteController {
     }
 
     public toggleArchive = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-
         try {
-            const data = await this.NoteService.isArchive(req.params.id);
+            const data = await this.NoteService.isArchive(Number(req.params.id), req.body.createdBy);
             res.status(HttpStatus.OK).json({
                 code: HttpStatus.OK,
                 data: data,
@@ -98,9 +90,8 @@ class NoteController {
     }
 
     public toggleTrash = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-
         try {
-            const data = await this.NoteService.isTrash(req.params.id);
+            const data = await this.NoteService.isTrash(Number(req.params.id), req.body.createdBy);
             res.status(HttpStatus.OK).json({
                 code: HttpStatus.OK,
                 data: data,

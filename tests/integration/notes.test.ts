@@ -4,13 +4,6 @@ import request from 'supertest';
 import app from '../../src/index';
 
 let token = "";
-let userDetails = {
-    firstName: "test",
-    lastName: "alpha",
-    phoneno: "8327705331",
-    password: "test1234",
-    email: "sajank@gmail.com"
-};
 let noteObj = {
     title: "This is Title",
     description: "This is Description",
@@ -20,26 +13,17 @@ let createdNoteId;
 
 describe('Note APIs Test', () => {
     before((done) => {
-        // First we create the user
-        request(app.getApp())
-            .post('/api/v1/users')
-            .send(userDetails)
-            .end((err, res) => {
-                if (err) return done(err);
-                console.log(res.body);
-                expect(res.statusCode).to.be.equal(201);
-            });
-        // Then log in the user to get the token
+
         request(app.getApp())
             .post('/api/v1/users/login')
-            .send({ email: "sajankumarswain@gmail.com", password: "test1234" })
+            .send({ email: "testkumar@gmail.com", password: "test1234" })
             .end((err, res) => {
                 if (err) return done(err);
                 console.log(res.body);
-                token = 'Bearer ' + res.body.data.data; // Set the token
+                token = 'Bearer ' + res.body.data.data; 
                 console.log(token);
                 expect(res.statusCode).to.be.equal(200);
-                done(); // Call done() after both requests are completed
+                done(); 
             });
 
     });

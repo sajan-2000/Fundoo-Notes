@@ -33,7 +33,7 @@ describe('Fundoo Notes Integration testing', () => {
           it('Login Of User', (done) => {
               request(app.getApp())
                   .post('/api/v1/users/login')
-                  .send({ "email": "sajankumarswain6@gmail.com", "password": "bheem1234" })
+                  .send({ "email": "salman@gmail.com", "password": "salman1234" })
                   .end((err, res) => {
                       console.log(res.body);
                       expect(res.statusCode).to.be.equal(200);
@@ -42,34 +42,34 @@ describe('Fundoo Notes Integration testing', () => {
           });
       });
 
-      describe('User forgot password', () => {
-          it('Request for Password Change of User', (done) => {
-              request(app.getApp())
-                  .post('/api/v1/users/forgotpassword')
-                  .send({ email: 'sajankumarswain6@gmail.com' })
-                  .end((err, res) => {
-                      console.log(res.body);
-                      forgetToken = 'bearer ' + res.body.data;
-                      console.log(forgetToken);
-                      expect(res.statusCode).to.be.equal(202);
-                      done();
-                  });
-          });
-      });
+        describe('User forgot password', () => {
+            it('Request for Password Change of User', (done) => {
+                request(app.getApp())
+                    .post('/api/v1/users/forgotpassword')
+                    .send({ email: 'sajankumarswain6@gmail.com' })
+                    .end((err, res) => {
+                        console.log(res.body);
+                        forgetToken = 'bearer ' + res.body.data;
+                        console.log(forgetToken);
+                        expect(res.statusCode).to.be.equal(202);
+                        done();
+                    });
+            });
+        });
 
-      describe('User Profile Password Changing', () => {
-          it('Password Change of User', (done) => {
-              request(app.getApp())
-                  .post('/api/v1/users/resetpwd')
-                  .set('Authorization', forgetToken)
-                  .send({ password: 'bheem12345' })
-                  .end((err, res) => {
-                      console.log(res.body);
-                      expect(res.statusCode).to.be.equal(202);
-                      done();
-                  });
-          });
-      });
+        describe('User Profile Password Changing', () => {
+            it('Password Change of User', (done) => {
+                request(app.getApp())
+                    .post('/api/v1/users/resetpwd')
+                    .set('Authorization', forgetToken)
+                    .send({ password: 'bheem12345' })
+                    .end((err, res) => {
+                        console.log(res.body);
+                        expect(res.statusCode).to.be.equal(202);
+                        done();
+                    });
+            });
+        });
 
   });
 });
